@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+
+    @-webkit-keyframes rotate {
+      0% { -webkit-transform: rotateY(0); }
+      100% { -webkit-transform: rotateY(360deg); }
+    }
+
+    .stage {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 300px;
+        height: 300px;
+        -webkit-perspective:1600px;
+        -webkit-perspective-origin: 50% -400px;
+    }
+
+    figure {
+        display: block;
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color:rgba(96,194,239,0.5);
+        border:1px solid rgba(255,255,255,0.5);
+    }
+
+    .cube {
+        -webkit-transform-style: preserve-3d;
+        -webkit-animation: rotate 10s infinite linear;
+    }
+
+    figure {
+        -webkit-transform-origin: 50% 50% 0;
+    }
+    
+
+    .front {
+        -webkit-transform: translateZ(150px);
+    }
+
+    .back {
+        -webkit-transform: rotateY(180deg) translateZ(150px)
+    }
+
+    .top {
+        -webkit-transform: rotateX(90deg) translateZ(150px);
+    }
+
+    .bottom {
+        -webkit-transform: rotateX(-90deg) translateZ(150px);
+    }
+
+    .left {
+        -webkit-transform: rotateY(-90deg) translateZ(150px);
+    }
+
+    .right {
+        -webkit-transform: rotateY(90deg) translateZ(150px);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="cube">
+            <figure class="back"></figure>
+            <figure class="top"></figure>
+            <figure class="bottom"></figure>
+            <figure class="left"></figure>
+            <figure class="right"></figure>
+            <figure class="front"></figure>
+        </div>
+    </div>
+</body>
+
+</html>
