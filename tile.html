@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+
+    @-webkit-keyframes rotate {
+      0% { -webkit-transform: rotateY(0); }
+      100% { -webkit-transform: rotateY(360deg); }
+    }
+
+    .stage {
+        font-size:300px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 1em;
+        height: 1em;
+        -webkit-perspective:5.33em;
+        -webkit-perspective-origin: 50% -0.87em;
+    }
+
+    figure {
+        display: block;
+        position: absolute;
+        width:0.17em;
+        height:1em;
+        margin:0;
+        padding:0;
+    }
+
+    .tile {
+        -webkit-transform-style: preserve-3d;
+        /*-webkit-transform: rotateY(-50deg);*/
+        -webkit-animation: rotate 10s infinite linear;
+    }
+
+    figure {
+        -webkit-transform-origin: 50% 50% 0;
+    }
+    
+    .left {
+        -webkit-transform: translateZ(0.5em);
+         background-color:#af2e1c;
+    }
+
+    .right {
+        -webkit-transform: rotateY(180deg) translateZ(0.5em);
+         background-color:#af2e1c;
+    }
+
+    .top {
+        -webkit-transform: rotateX(90deg) translateZ(0.5em);
+        background-color:#CE5D46;
+    }
+
+    .bottom {
+        -webkit-transform: rotateX(-90deg) translateZ(0.5em);
+        background-color:#c43221;
+    }
+
+    .front {
+        -webkit-transform: rotateY(-90deg) translateZ(0.5em);
+        width:1em;
+        background-color:#c43221;
+
+    }
+
+    .back {
+        -webkit-transform: rotateY(90deg) translateZ(-0.33em);
+        width:1em;
+        background-color:#c43221;
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="tile">
+            <figure class="back"></figure>
+            <figure class="top"></figure>
+            <figure class="bottom"></figure>
+            <figure class="left"></figure>
+            <figure class="right"></figure>
+            <figure class="front"></figure>
+        </div>
+    </div>
+</body>
+
+</html>
